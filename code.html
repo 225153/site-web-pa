@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STRATEGIA - Bureau d'études, de formation et de conseil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "outline-variant": "#c4c6cf",
+                "on-error": "#ffffff",
+                "tertiary-container": "#003473",
+                "tertiary": "#001f4b",
+                "background": "#f8f9fa",
+                "on-secondary-container": "#646464",
+                "on-tertiary-fixed": "#001a41",
+                "on-primary-fixed": "#001b3d",
+                "surface-variant": "#e1e3e4",
+                "secondary-fixed": "#e4e2e2",
+                "inverse-surface": "#2e3132",
+                "primary-fixed": "#d6e3ff",
+                "secondary-container": "#e4e2e2",
+                "primary": "#002046",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#699eff",
+                "surface-tint": "#465f88",
+                "surface-container-lowest": "#ffffff",
+                "outline": "#74777f",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#e7e8e9",
+                "primary-container": "#1b365d",
+                "surface-container-low": "#f3f4f5",
+                "on-tertiary-fixed-variant": "#004493",
+                "secondary": "#5e5e5e",
+                "on-primary-container": "#87a0cd",
+                "error-container": "#ffdad6",
+                "tertiary-fixed": "#d8e2ff",
+                "on-surface": "#191c1d",
+                "tertiary-fixed-dim": "#adc7ff",
+                "secondary-fixed-dim": "#c8c6c6",
+                "surface-container-highest": "#e1e3e4",
+                "primary-fixed-dim": "#aec7f7",
+                "on-secondary-fixed-variant": "#474747",
+                "inverse-primary": "#aec7f7",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#2e476f",
+                "on-background": "#191c1d",
+                "surface-bright": "#f8f9fa",
+                "on-surface-variant": "#44474e",
+                "surface-container": "#edeeef",
+                "on-error-container": "#93000a",
+                "surface": "#f8f9fa",
+                "surface-dim": "#d9dadb",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-fixed": "#1b1c1c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {},
+        "fontFamily": {
+                "headline": [
+                        "Montserrat"
+                ],
+                "display": [
+                        "Montserrat"
+                ],
+                "body": [
+                        "Inter"
+                ],
+                "label": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {}
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 flex justify-between items-center px-16 h-20 max-w-[1440px] mx-auto left-0 right-0">
+<div class="font-headline text-2xl font-black tracking-tighter text-primary dark:text-primary-fixed-dim">
+            STRATEGIA
+        </div>
+<nav class="hidden md:block">
+<ul class="flex space-x-8 items-center font-headline text-sm uppercase tracking-wider">
+<li><a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 opacity-80 duration-150" href="#">Home</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#services">Services</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#references">References</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="hidden md:block">
+<a class="bg-primary-container text-on-primary px-6 py-2 rounded font-headline text-sm uppercase tracking-wide hover:opacity-90 transition-opacity" href="#contact">Request a Quote</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 md:px-16 max-w-[1440px] mx-auto">
+<div class="absolute inset-0 z-0">
+<img alt="Industrial Engineering" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50"></div>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h1 class="font-display text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+                Bureau d'études, de formation et de conseil spécialisé.
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant mb-10 max-w-2xl font-body">
+                Expertise en ingénierie, management industriel et systèmes d'information pour propulser votre performance opérationnelle.
+            </p>
+<a class="inline-block bg-primary-container text-on-primary px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-primary transition-colors shadow-lg" href="#contact">
+                Demander un devis
+            </a>
+</div>
+</section>
+<!-- Pourquoi nous choisir Section -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface">
+<div class="mb-16 text-center">
+<h2 class="font-display text-3xl font-bold text-primary mb-4">Pourquoi nous choisir ?</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="diversity_3">diversity_3</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-primary mb-3">Expertise Multidisciplinaire</h3>
+<p class="text-on-surface-variant text-sm">Une équipe de consultants et d'ingénieurs couvrant tous les domaines de la performance.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-primary mb-3">Accompagnement Sur-Mesure</h3>
+<p class="text-on-surface-variant text-sm">Des solutions adaptées à la taille, au secteur et aux défis spécifiques de votre entreprise.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-primary mb-3">Engagement Qualité (ISO)</h3>
+<p class="text-on-surface-variant text-sm">Une démarche rigoureuse alignée sur les standards internationaux pour des résultats durables.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="lightbulb">lightbulb</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-primary mb-3">Innovation Technologique</h3>
+<p class="text-on-surface-variant text-sm">Intégration des dernières technologies et systèmes d'information dans vos processus.</p>
+</div>
+</div>
+</section>
+<!-- Expertise Approfondie Section -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface-container-low">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<img alt="Consulting session" class="rounded-lg shadow-xl w-full object-cover h-[400px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmOB_JbXJuyKAmENUr6YVGJq2cm5VDVPD4Fpf5IglX74b1aJvfRk523GQCp27iZFqpW1B-r2vfA7Of52GxZtzSxSWU7Lfsh0t8OnjOBX0PAiGztXw05mCrivA_m5Km4kkc4n13mKEdSI_NKTvgi6vYPd8JS_-w2oLjLtr4cisOfKjdryyW6eQ_vZ-M7KD9Alh1mDbA4vvsbb3fhFDFwCqwHZJhY7N_PGu9M-R1jDUFNlszdK3pGF6V52RQQYODjC8R4OqqfGubvF8"/>
+</div>
+<div>
+<h2 class="font-display text-3xl font-bold text-primary mb-6">Expertise Approfondie &amp; Coaching Stratégique</h2>
+<div class="w-20 h-1 bg-primary mb-6"></div>
+<p class="text-on-surface-variant mb-6 text-lg">
+                Notre approche ne s'arrête pas à la recommandation. Nous croyons en la transformation par l'accompagnement humain et le transfert de compétences.
+            </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-on-surface-variant"><strong>Diagnostic Précis :</strong> Identification des goulots d'étranglement et des opportunités de croissance.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-on-surface-variant"><strong>Coaching Dirigeants :</strong> Accompagnement des comités de direction dans la conduite du changement.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-on-surface-variant"><strong>Formation Opérationnelle :</strong> Montée en compétences de vos équipes sur les nouveaux outils et méthodes.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface" id="services">
+<div class="mb-16 text-center">
+<h2 class="font-display text-3xl font-bold text-primary mb-4">Nos Services d'Expertise</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="factory">factory</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Management Industriel</h3>
+<p class="text-on-surface-variant font-body text-sm">Optimisation de l'organisation des entreprises industrielles, Lean Manufacturing, et Supply Chain Management (SCM).</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="account_tree">account_tree</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Management de Projets</h3>
+<p class="text-on-surface-variant font-body text-sm">Pilotage et intégration via ERP, MS Project, et Primavera pour garantir le succès de vos déploiements.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="verified">verified</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes de Management</h3>
+<p class="text-on-surface-variant font-body text-sm">Accompagnement aux certifications ISO 9001 (Qualité), 14001 (Environnement), 45001 (SST), 27001 (Sécurité IT).</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="dns">dns</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes d’Information</h3>
+<p class="text-on-surface-variant font-body text-sm">Audit, conseil et intégration de solutions ERP, Business Intelligence (BI), GED, et Sécurité des SI.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="co_present">co_present</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Coaching &amp; Accompagnement</h3>
+<p class="text-on-surface-variant font-body text-sm">Formation sur-mesure et accompagnement stratégique des équipes dirigeantes et opérationnelles.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="architecture">architecture</span>
+<h3 class="font-headline text-xl font-semibold text-primary mb-3">Etudes Techniques</h3>
+<p class="text-on-surface-variant font-body text-sm">Réalisation d'études techniques et stratégiques approfondies pour valider la faisabilité de vos projets d'ingénierie.</p>
+</div>
+</div>
+</section>
+<!-- Notre Méthodologie Section -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-primary-container text-on-primary rounded-xl my-12">
+<div class="mb-16 text-center">
+<h2 class="font-display text-3xl font-bold mb-4">Notre Méthodologie</h2>
+<div class="w-20 h-1 bg-primary-fixed-dim mx-auto"></div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center relative">
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">1</div>
+<h4 class="font-headline font-bold mb-2">Audit &amp; Diagnostic</h4>
+<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">État des lieux et identification des besoins</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">2</div>
+<h4 class="font-headline font-bold mb-2">Plan d'Action</h4>
+<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Définition de la stratégie et des ressources</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">3</div>
+<h4 class="font-headline font-bold mb-2">Mise en œuvre</h4>
+<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Déploiement des solutions et accompagnement</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center bg-primary-container p-4">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">4</div>
+<h4 class="font-headline font-bold mb-2">Suivi &amp; Amélioration</h4>
+<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Mesure des performances et ajustement continu</p>
+</div>
+</div>
+</section>
+<!-- Contact & Footer Section combined for layout cohesion -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Contact Form -->
+<div>
+<h2 class="font-display text-3xl font-bold text-primary mb-8">Envoyez-nous un message</h2>
+<form id="contactForm" name="contact" method="POST" data-netlify="true" class="space-y-6">
+<input type="hidden" name="form-name" value="contact" />
+<div class="relative">
+<label class="block font-label text-sm font-medium text-on-surface mb-1" for="name">Nom complet</label>
+<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="name" name="name" placeholder="Votre nom" type="text" required/>
+<p id="nameError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
+</div>
+<div class="relative">
+<label class="block font-label text-sm font-medium text-on-surface mb-1" for="email">Email professionnel</label>
+<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" name="email" placeholder="email@entreprise.com" type="email" required/>
+<p id="emailError" class="text-error text-xs mt-1 hidden">Veuillez entrer une adresse e-mail correcte.</p>
+</div>
+<div class="relative">
+<label class="block font-label text-sm font-medium text-on-surface mb-1" for="message">Message</label>
+<textarea class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="message" name="message" placeholder="Décrivez votre besoin..." rows="4" required></textarea>
+<p id="messageError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
+</div>
+<button id="submitBtn" class="bg-primary text-on-primary px-8 py-3 rounded font-headline font-semibold hover:bg-primary-container transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled>
+                        Envoyer
+                    </button>
+</form>
+</div>
+<!-- Direct Contact & Clients -->
+<div class="space-y-12" id="references">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary mb-6">Contact Direct</h3>
+<div class="space-y-4">
+<div class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<span class="font-medium">M. Abdelaziz KHARRAT</span>
+</div>
+<div class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="phone">phone</span>
+<span class="font-medium">+216 23 438 810</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-primary mb-6">Ils nous font confiance</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">EPPM</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">ECOCERAT</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">TC MARINES</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">UPC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">MDS</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">Ariston Thermo</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">SOPROTIC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">TUNIFOOD</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">UGI</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Component execution -->
+<footer class="bg-primary dark:bg-tertiary-container w-full">
+<div class="w-full py-12 px-16 flex flex-col md:flex-row justify-between items-center max-w-[1440px] mx-auto text-on-primary dark:text-on-tertiary-container font-body text-label-sm">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<div class="font-headline text-lg font-bold text-on-primary dark:text-on-tertiary-container mb-2">STRATEGIA</div>
+<div class="opacity-80">© 2024 STRATEGIA Consultancy &amp; Engineering. MF: 1234567/A | RC: 987654321. All rights reserved.</div>
+</div>
+<ul class="flex flex-wrap justify-center gap-6">
+<li><a class="text-on-primary-container opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-container opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary-container font-bold hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none flex items-center gap-1" href="https://www.linkedin.com/in/abdelaziz-kharrat-7a2a6725/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm" data-icon="share">share</span> LinkedIn</a></li>
+<li><a class="text-on-primary-container font-bold hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none flex items-center gap-1" href="https://wa.me/21623438810" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm" data-icon="chat">chat</span> WhatsApp</a></li>
+</ul>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+
+    // Fonction de validation individuelle
+    function validateInput(input, errorElement, isEmail = false) {
+        if (input.value.trim() === '') {
+            errorElement.textContent = "Veuillez remplir tous les champs.";
+            errorElement.classList.remove('hidden');
+        } else if (isEmail && !input.validity.valid) {
+            errorElement.textContent = "Veuillez entrer une adresse e-mail correcte.";
+            errorElement.classList.remove('hidden');
+        } else {
+            errorElement.classList.add('hidden');
+        }
+    }
+
+    // Écouteurs d'événements pour la perte de focus (quand l'utilisateur quitte le champ)
+    nameInput.addEventListener('blur', () => validateInput(nameInput, nameError));
+    emailInput.addEventListener('blur', () => validateInput(emailInput, emailError, true));
+    messageInput.addEventListener('blur', () => validateInput(messageInput, messageError));
+
+    // Valide le formulaire global à chaque modification
+    form.addEventListener('input', () => {
+        submitBtn.disabled = !form.checkValidity();
+
+        // Retire l'erreur en direct si l'utilisateur corrige pendant la saisie
+        if(document.activeElement === nameInput) validateInput(nameInput, nameError);
+        if(document.activeElement === emailInput) validateInput(emailInput, emailError, true);
+        if(document.activeElement === messageInput) validateInput(messageInput, messageError);
+    });
+
+    // Optionnel: Gère la soumission avec Netlify Forms
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi...";
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Envoyé !',
+                text: 'Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.',
+                confirmButtonColor: '#002046', // Utilise la couleur "primary" de ton thème
+                confirmButtonText: 'Fermer'
+            });
+            form.reset();
+            submitBtn.textContent = "Envoyer";
+        })
+        .catch((error) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
+                confirmButtonColor: '#ba1a1a' // Utilise la couleur "error" de ton thème
+            });
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Envoyer";
+        });
+    });
+</script>
+</body></html>

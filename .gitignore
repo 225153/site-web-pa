@@ -1,0 +1,13 @@
+# Local development files
+.vscode/
+
+# Build artifacts
+dist/
+build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Netlify files
+.netlify/
