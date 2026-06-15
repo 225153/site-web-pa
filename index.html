@@ -92,12 +92,113 @@
 <style>
         .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          transition: transform 0.25s, color 0.25s;
+        }
+
+        /* 1. Scroll-reveal animations */
+        .reveal {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+          .reveal {
+            transition: opacity 0.55s ease, transform 0.55s ease;
+          }
+          .reveal.visible {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .reveal {
+            opacity: 1;
+            transform: none;
+          }
+        }
+
+        /* 2. Animated service cards */
+        .group {
+          position: relative;
+          overflow: hidden;
+        }
+        .group::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 3px;
+          height: 0;
+          background: #002046;
+          transition: height 0.3s ease;
+        }
+        .group:hover::before {
+          height: 100%;
+        }
+        .group:hover .material-symbols-outlined {
+          transform: scale(1.15);
+          color: #d6e3ff;
+        }
+
+        /* 3. Animated methodology timeline */
+        .methodology-step {
+          transition: all 0.4s ease;
+        }
+        .methodology-step.active {
+          background: #d6e3ff !important;
+          border-color: #002046 !important;
+          color: #002046 !important;
+          transform: scale(1.1);
+        }
+        .timeline-line {
+          width: 0;
+          transition: width 1.2s ease;
+        }
+        .timeline-line.active {
+          width: 100%;
+        }
+
+        /* 5. Mobile hamburger menu */
+        #mobile-menu {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.35s ease;
+        }
+        #mobile-menu.open {
+          max-height: 400px;
+        }
+        .hamburger-line {
+          transition: all 0.3s ease;
+        }
+        .hamburger-open .line-1 { transform: translateY(8px) rotate(45deg); }
+        .hamburger-open .line-2 { opacity: 0; }
+        .hamburger-open .line-3 { transform: translateY(-8px) rotate(-45deg); }
+
+        /* 7. Client grid polish */
+        .client-item {
+          transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .client-item:hover {
+          border-color: #aec7f7;
+          box-shadow: 0 0 0 4px #d6e3ff66;
+        }
+
+        /* 8. Hero CTA button pulse */
+        @keyframes pulse-ring {
+          0% { box-shadow: 0 0 0 0 rgba(0,32,70,0.35); }
+          70% { box-shadow: 0 0 0 12px rgba(0,32,70,0); }
+          100% { box-shadow: 0 0 0 0 rgba(0,32,70,0); }
+        }
+        .btn-pulse {
+          animation: pulse-ring 2.5s infinite;
         }
       </style>
 </head>
 <body class="bg-background text-on-background font-body antialiased">
 <!-- TopAppBar -->
-<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 flex justify-between items-center px-16 h-20 max-w-[1440px] mx-auto left-0 right-0">
+<header id="main-header" class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 transition-all duration-300">
+<div class="flex justify-between items-center px-4 md:px-16 h-20 max-w-[1440px] mx-auto w-full">
 <div class="font-headline text-2xl font-black tracking-tighter text-primary dark:text-primary-fixed-dim">
             STRATEGIA
         </div>
@@ -112,9 +213,28 @@
 <div class="hidden md:block">
 <a class="bg-primary-container text-on-primary px-6 py-2 rounded font-headline text-sm uppercase tracking-wide hover:opacity-90 transition-opacity" href="#contact">Request a Quote</a>
 </div>
+<!-- Hamburger Menu Button -->
+<button id="menu-toggle" class="block md:hidden text-primary focus:outline-none p-2">
+    <div class="w-6 h-5 relative flex flex-col justify-between">
+        <span class="hamburger-line line-1 w-full h-0.5 bg-current rounded-full"></span>
+        <span class="hamburger-line line-2 w-full h-0.5 bg-current rounded-full"></span>
+        <span class="hamburger-line line-3 w-full h-0.5 bg-current rounded-full"></span>
+    </div>
+</button>
+</div>
+<!-- Mobile Dropdown -->
+<div id="mobile-menu" class="md:hidden bg-surface border-b border-outline-variant">
+    <nav class="px-6 py-4 flex flex-col space-y-4 font-headline text-sm uppercase tracking-wider">
+        <a class="mobile-link text-primary font-bold" href="#">Home</a>
+        <a class="mobile-link text-secondary" href="#services">Services</a>
+        <a class="mobile-link text-secondary" href="#references">References</a>
+        <a class="mobile-link text-secondary" href="#contact">Contact</a>
+        <a class="mobile-link bg-primary-container text-on-primary px-6 py-3 rounded text-center font-bold" href="#contact">Request a Quote</a>
+    </nav>
+</div>
 </header>
 <!-- Hero Section -->
-<section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 md:px-16 max-w-[1440px] mx-auto">
+<section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 md:px-16 max-w-[1440px] mx-auto reveal overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img alt="Industrial Engineering" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50"></div>
@@ -126,40 +246,40 @@
 <p class="text-lg md:text-xl text-on-surface-variant mb-10 max-w-2xl font-body">
                 Expertise en ingénierie, management industriel et systèmes d'information pour propulser votre performance opérationnelle.
             </p>
-<a class="inline-block bg-primary-container text-on-primary px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-primary transition-colors shadow-lg" href="#contact">
+<a class="inline-block bg-primary-container text-on-primary px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-primary transition-colors shadow-lg btn-pulse" href="#contact">
                 Demander un devis
             </a>
 </div>
 </section>
 <!-- Pourquoi nous choisir Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface">
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal">
 <div class="mb-16 text-center">
 <h2 class="font-display text-3xl font-bold text-primary mb-4">Pourquoi nous choisir ?</h2>
 <div class="w-20 h-1 bg-primary mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="text-center p-6">
+<div class="text-center p-6 reveal">
 <div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="diversity_3">diversity_3</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Expertise Multidisciplinaire</h3>
 <p class="text-on-surface-variant text-sm">Une équipe de consultants et d'ingénieurs couvrant tous les domaines de la performance.</p>
 </div>
-<div class="text-center p-6">
+<div class="text-center p-6 reveal">
 <div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="handshake">handshake</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Accompagnement Sur-Mesure</h3>
 <p class="text-on-surface-variant text-sm">Des solutions adaptées à la taille, au secteur et aux défis spécifiques de votre entreprise.</p>
 </div>
-<div class="text-center p-6">
+<div class="text-center p-6 reveal">
 <div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Engagement Qualité (ISO)</h3>
 <p class="text-on-surface-variant text-sm">Une démarche rigoureuse alignée sur les standards internationaux pour des résultats durables.</p>
 </div>
-<div class="text-center p-6">
+<div class="text-center p-6 reveal">
 <div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="lightbulb">lightbulb</span>
 </div>
@@ -168,8 +288,27 @@
 </div>
 </div>
 </section>
+
+<!-- Stats Counter Section -->
+<section id="stats-section" class="py-16 bg-primary text-on-primary">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div class="reveal">
+            <div class="font-display text-5xl font-black mb-2" data-target="50">0</div>
+            <div class="font-headline text-sm uppercase tracking-widest opacity-80">clients accompagnés</div>
+        </div>
+        <div class="reveal">
+            <div class="font-display text-5xl font-black mb-2" data-target="120">0</div>
+            <div class="font-headline text-sm uppercase tracking-widest opacity-80">projets réalisés</div>
+        </div>
+        <div class="reveal">
+            <div class="font-display text-5xl font-black mb-2" data-target="15">0</div>
+            <div class="font-headline text-sm uppercase tracking-widest opacity-80">années d'expertise</div>
+        </div>
+    </div>
+</section>
+
 <!-- Expertise Approfondie Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface-container-low">
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface-container-low reveal">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 <div>
 <img alt="Consulting session" class="rounded-lg shadow-xl w-full object-cover h-[400px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmOB_JbXJuyKAmENUr6YVGJq2cm5VDVPD4Fpf5IglX74b1aJvfRk523GQCp27iZFqpW1B-r2vfA7Of52GxZtzSxSWU7Lfsh0t8OnjOBX0PAiGztXw05mCrivA_m5Km4kkc4n13mKEdSI_NKTvgi6vYPd8JS_-w2oLjLtr4cisOfKjdryyW6eQ_vZ-M7KD9Alh1mDbA4vvsbb3fhFDFwCqwHZJhY7N_PGu9M-R1jDUFNlszdK3pGF6V52RQQYODjC8R4OqqfGubvF8"/>
@@ -198,44 +337,44 @@
 </div>
 </section>
 <!-- Services Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface" id="services">
-<div class="mb-16 text-center">
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal" id="services">
+<div class="mb-16 text-center reveal">
 <h2 class="font-display text-3xl font-bold text-primary mb-4">Nos Services d'Expertise</h2>
 <div class="w-20 h-1 bg-primary mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Card 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="factory">factory</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management Industriel</h3>
 <p class="text-on-surface-variant font-body text-sm">Optimisation de l'organisation des entreprises industrielles, Lean Manufacturing, et Supply Chain Management (SCM).</p>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="account_tree">account_tree</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management de Projets</h3>
 <p class="text-on-surface-variant font-body text-sm">Pilotage et intégration via ERP, MS Project, et Primavera pour garantir le succès de vos déploiements.</p>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="verified">verified</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes de Management</h3>
 <p class="text-on-surface-variant font-body text-sm">Accompagnement aux certifications ISO 9001 (Qualité), 14001 (Environnement), 45001 (SST), 27001 (Sécurité IT).</p>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="dns">dns</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes d’Information</h3>
 <p class="text-on-surface-variant font-body text-sm">Audit, conseil et intégration de solutions ERP, Business Intelligence (BI), GED, et Sécurité des SI.</p>
 </div>
 <!-- Card 5 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="co_present">co_present</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Coaching &amp; Accompagnement</h3>
 <p class="text-on-surface-variant font-body text-sm">Formation sur-mesure et accompagnement stratégique des équipes dirigeantes et opérationnelles.</p>
 </div>
 <!-- Card 6 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
 <span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="architecture">architecture</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Etudes Techniques</h3>
 <p class="text-on-surface-variant font-body text-sm">Réalisation d'études techniques et stratégiques approfondies pour valider la faisabilité de vos projets d'ingénierie.</p>
@@ -243,34 +382,36 @@
 </div>
 </section>
 <!-- Notre Méthodologie Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-primary-container text-on-primary rounded-xl my-12">
-<div class="mb-16 text-center">
+<section id="methodology" class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-primary-container text-on-primary rounded-xl my-12 reveal">
+<div class="mb-16 text-center reveal">
 <h2 class="font-display text-3xl font-bold mb-4">Notre Méthodologie</h2>
 <div class="w-20 h-1 bg-primary-fixed-dim mx-auto"></div>
 </div>
 <div class="flex flex-col md:flex-row justify-between items-center relative">
-<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -z-0"></div>
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -z-0">
+    <div id="timeline-line" class="h-full bg-primary-fixed timeline-line"></div>
+</div>
 <!-- Step 1 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">1</div>
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">1</div>
 <h4 class="font-headline font-bold mb-2">Audit &amp; Diagnostic</h4>
 <p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">État des lieux et identification des besoins</p>
 </div>
 <!-- Step 2 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">2</div>
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">2</div>
 <h4 class="font-headline font-bold mb-2">Plan d'Action</h4>
 <p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Définition de la stratégie et des ressources</p>
 </div>
 <!-- Step 3 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">3</div>
+<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">3</div>
 <h4 class="font-headline font-bold mb-2">Mise en œuvre</h4>
 <p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Déploiement des solutions et accompagnement</p>
 </div>
 <!-- Step 4 -->
-<div class="relative z-10 flex flex-col items-center bg-primary-container p-4">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg">4</div>
+<div class="relative z-10 flex flex-col items-center bg-primary-container p-4 reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">4</div>
 <h4 class="font-headline font-bold mb-2">Suivi &amp; Amélioration</h4>
 <p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Mesure des performances et ajustement continu</p>
 </div>
@@ -321,16 +462,16 @@
 </div>
 <div>
 <h3 class="font-headline text-xl font-bold text-primary mb-6">Ils nous font confiance</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">EPPM</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">ECOCERAT</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">TC MARINES</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">UPC</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">MDS</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">Ariston Thermo</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">SOPROTIC</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">TUNIFOOD</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container">UGI</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">EPPM</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">ECOCERAT</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">TC MARINES</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">UPC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">MDS</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">Ariston Thermo</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">SOPROTIC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">TUNIFOOD</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">UGI</div>
 </div>
 </div>
 </div>
@@ -354,6 +495,122 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    // Constants for menu and header
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mainHeader = document.getElementById('main-header');
+    const headerWrapper = mainHeader.querySelector('.flex.justify-between');
+
+    // mobile menu toggle
+    menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.classList.toggle('hamburger-open', isOpen);
+    });
+
+    // Close menu when clicking links
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuToggle.classList.remove('hamburger-open');
+        });
+    });
+
+    // Header scroll behavior
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            mainHeader.classList.add('shadow-md');
+            headerWrapper.classList.remove('h-20');
+            headerWrapper.classList.add('h-16');
+        } else {
+            mainHeader.classList.remove('shadow-md');
+            headerWrapper.classList.remove('h-16');
+            headerWrapper.classList.add('h-20');
+        }
+    });
+
+    // IntersectionObserver for reveal animations
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Stagger logic for items within a grid
+                const children = Array.from(entry.target.children);
+                if (children.length > 1) {
+                    children.forEach((child, index) => {
+                        if (child.classList.contains('reveal')) {
+                            child.style.transitionDelay = `${index * 100}ms`;
+                            child.classList.add('visible');
+                        }
+                    });
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+        threshold: 0.15
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Counter logic
+    function countUp(el, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                el.innerText = target + (el.innerText.includes('+') ? '+' : '');
+                clearInterval(timer);
+            } else {
+                el.innerText = Math.floor(start) + (el.innerText.includes('+') ? '+' : '');
+            }
+        }, 16);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll('[data-target]');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    countUp(counter, target);
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // Methodology animation logic
+    const methodologyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate horizontal line
+                const line = document.getElementById('timeline-line');
+                if (line) line.classList.add('active');
+
+                // Staggered activation of circles
+                const steps = document.querySelectorAll('.methodology-step');
+                steps.forEach((step, index) => {
+                    setTimeout(() => {
+                        step.classList.add('active');
+                    }, index * 300);
+                });
+                methodologyObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const methodologySection = document.getElementById('methodology');
+    if (methodologySection) methodologyObserver.observe(methodologySection);
+
+    // Original form logic
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     
@@ -416,6 +673,7 @@
             });
             form.reset();
             submitBtn.textContent = "Envoyer";
+            submitBtn.disabled = true; // Stay disabled after reset
         })
         .catch((error) => {
             Swal.fire({
@@ -428,5 +686,10 @@
             submitBtn.textContent = "Envoyer";
         });
     });
+
+    // Respect user motion preference globally
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
 </script>
 </body></html>
