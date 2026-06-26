@@ -119,11 +119,11 @@
         }
 
         /* 2. Animated service cards */
-        .group {
+                .service-card {
           position: relative;
           overflow: hidden;
         }
-        .group::before {
+                .service-card::before {
           content: '';
           position: absolute;
           left: 0;
@@ -133,10 +133,10 @@
           background: #002046;
           transition: height 0.3s ease;
         }
-        .group:hover::before {
+                .service-card:hover::before {
           height: 100%;
         }
-        .group:hover .material-symbols-outlined {
+                .service-card:hover .material-symbols-outlined {
           transform: scale(1.15);
           color: #d6e3ff;
         }
@@ -146,9 +146,9 @@
           transition: all 0.4s ease;
         }
         .methodology-step.active {
-          background: #d6e3ff !important;
+                    background: #002046 !important;
           border-color: #002046 !important;
-          color: #002046 !important;
+                    color: #d6e3ff !important;
           transform: scale(1.1);
         }
         .timeline-line {
@@ -236,7 +236,7 @@
 <!-- Hero Section -->
 <section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 md:px-16 max-w-[1440px] mx-auto reveal overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Industrial Engineering" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
+<img alt="Industrial Engineering" class="hidden md:block w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50"></div>
 </div>
 <div class="relative z-10 max-w-3xl">
@@ -344,38 +344,38 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Card 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="factory">factory</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="factory">factory</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management Industriel</h3>
 <p class="text-on-surface-variant font-body text-sm">Optimisation de l'organisation des entreprises industrielles, Lean Manufacturing, et Supply Chain Management (SCM).</p>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="account_tree">account_tree</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="account_tree">account_tree</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management de Projets</h3>
 <p class="text-on-surface-variant font-body text-sm">Pilotage et intégration via ERP, MS Project, et Primavera pour garantir le succès de vos déploiements.</p>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="verified">verified</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="verified">verified</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes de Management</h3>
 <p class="text-on-surface-variant font-body text-sm">Accompagnement aux certifications ISO 9001 (Qualité), 14001 (Environnement), 45001 (SST), 27001 (Sécurité IT).</p>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="dns">dns</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="dns">dns</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes d’Information</h3>
 <p class="text-on-surface-variant font-body text-sm">Audit, conseil et intégration de solutions ERP, Business Intelligence (BI), GED, et Sécurité des SI.</p>
 </div>
 <!-- Card 5 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="co_present">co_present</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="co_present">co_present</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Coaching &amp; Accompagnement</h3>
 <p class="text-on-surface-variant font-body text-sm">Formation sur-mesure et accompagnement stratégique des équipes dirigeantes et opérationnelles.</p>
 </div>
 <!-- Card 6 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow group reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="architecture">architecture</span>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="architecture">architecture</span>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Etudes Techniques</h3>
 <p class="text-on-surface-variant font-body text-sm">Réalisation d'études techniques et stratégiques approfondies pour valider la faisabilité de vos projets d'ingénierie.</p>
 </div>
@@ -423,24 +423,25 @@
 <!-- Contact Form -->
 <div>
 <h2 class="font-display text-3xl font-bold text-primary mb-8">Envoyez-nous un message</h2>
-<form id="contactForm" name="contact" method="POST" data-netlify="true" class="space-y-6">
+<form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
 <input type="hidden" name="form-name" value="contact" />
+<input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
 <div class="relative">
 <label class="block font-label text-sm font-medium text-on-surface mb-1" for="name">Nom complet</label>
-<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="name" name="name" placeholder="Votre nom" type="text" required/>
+<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="name" name="name" placeholder="Votre nom" type="text" autocomplete="name" required/>
 <p id="nameError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
 </div>
 <div class="relative">
 <label class="block font-label text-sm font-medium text-on-surface mb-1" for="email">Email professionnel</label>
-<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" name="email" placeholder="email@entreprise.com" type="email" required/>
+<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" name="email" placeholder="email@entreprise.com" type="email" autocomplete="email" required/>
 <p id="emailError" class="text-error text-xs mt-1 hidden">Veuillez entrer une adresse e-mail correcte.</p>
 </div>
 <div class="relative">
 <label class="block font-label text-sm font-medium text-on-surface mb-1" for="message">Message</label>
-<textarea class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="message" name="message" placeholder="Décrivez votre besoin..." rows="4" required></textarea>
+<textarea class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="message" name="message" placeholder="Décrivez votre besoin..." rows="4" autocomplete="off" required></textarea>
 <p id="messageError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
 </div>
-<button id="submitBtn" class="bg-primary text-on-primary px-8 py-3 rounded font-headline font-semibold hover:bg-primary-container transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled>
+<button id="submitBtn" class="bg-primary text-on-primary px-8 py-3 rounded font-headline font-semibold hover:bg-primary-container transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed" type="submit">
                         Envoyer
                     </button>
 </form>
@@ -622,6 +623,10 @@
     const emailError = document.getElementById('emailError');
     const messageError = document.getElementById('messageError');
 
+    document.addEventListener('DOMContentLoaded', () => {
+        submitBtn.disabled = !form.checkValidity();
+    });
+
     // Fonction de validation individuelle
     function validateInput(input, errorElement, isEmail = false) {
         if (input.value.trim() === '') {
@@ -673,7 +678,7 @@
             });
             form.reset();
             submitBtn.textContent = "Envoyer";
-            submitBtn.disabled = true; // Stay disabled after reset
+            submitBtn.disabled = !form.checkValidity();
         })
         .catch((error) => {
             Swal.fire({
