@@ -22,11 +22,13 @@ mobileLinks.forEach(link => {
 // Header scroll behavior
 window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
-        mainHeader.classList.add('shadow-md');
+        mainHeader.classList.add('shadow-lg', 'bg-surface/95', 'dark:bg-inverse-surface/95');
+        mainHeader.classList.remove('bg-surface/90', 'dark:bg-inverse-surface/90');
         headerWrapper.classList.remove('h-20');
         headerWrapper.classList.add('h-16');
     } else {
-        mainHeader.classList.remove('shadow-md');
+        mainHeader.classList.remove('shadow-lg', 'bg-surface/95', 'dark:bg-inverse-surface/95');
+        mainHeader.classList.add('bg-surface/90', 'dark:bg-inverse-surface/90');
         headerWrapper.classList.remove('h-16');
         headerWrapper.classList.add('h-20');
     }

@@ -197,24 +197,29 @@
 </head>
 <body class="bg-background text-on-background font-body antialiased">
 <!-- TopAppBar -->
-<header id="main-header" class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 transition-all duration-300">
+<header id="main-header" class="bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-md border-b border-outline-variant/50 dark:border-outline/50 fixed top-0 w-full z-50 transition-all duration-300">
 <div class="flex justify-between items-center px-4 md:px-16 h-20 max-w-[1440px] mx-auto w-full">
-<div class="font-headline text-2xl font-black tracking-tighter text-primary dark:text-primary-fixed-dim">
-            STRATEGIA
-        </div>
+<a href="#" class="flex items-center gap-2 group">
+    <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary shadow-sm group-hover:shadow-md transition-shadow">
+        <span class="material-symbols-outlined text-xl" data-icon="analytics">analytics</span>
+    </div>
+    <div class="font-headline text-2xl font-black tracking-tighter text-primary dark:text-primary-fixed-dim">
+        STRATEGIA
+    </div>
+</a>
 <nav class="hidden md:block">
-<ul class="flex space-x-8 items-center font-headline text-sm uppercase tracking-wider">
-<li><a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 opacity-80 duration-150" href="#">Home</a></li>
-<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#services">Services</a></li>
-<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#references">References</a></li>
-<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded" href="#contact">Contact</a></li>
+<ul class="flex space-x-1 items-center font-headline text-sm uppercase tracking-wider">
+<li><a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 opacity-90 duration-150" href="#">Home</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container px-3 py-2 rounded-md" href="#services">Services</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container px-3 py-2 rounded-md" href="#references">References</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors hover:bg-surface-container-low dark:hover:bg-primary-container px-3 py-2 rounded-md" href="#contact">Contact</a></li>
 </ul>
 </nav>
 <div class="hidden md:block">
-<a class="bg-primary-container text-on-primary px-6 py-2 rounded font-headline text-sm uppercase tracking-wide hover:opacity-90 transition-opacity" href="#contact">Request a Quote</a>
+<a class="bg-primary-container text-on-primary px-6 py-2.5 rounded font-headline text-sm uppercase tracking-wide hover:bg-primary hover:shadow-lg hover:-translate-y-0.5 transition-all" href="#contact">Request a Quote</a>
 </div>
 <!-- Hamburger Menu Button -->
-<button id="menu-toggle" class="block md:hidden text-primary focus:outline-none p-2">
+<button id="menu-toggle" class="block md:hidden text-primary focus:outline-none p-2" aria-label="Ouvrir le menu">
     <div class="w-6 h-5 relative flex flex-col justify-between">
         <span class="hamburger-line line-1 w-full h-0.5 bg-current rounded-full"></span>
         <span class="hamburger-line line-2 w-full h-0.5 bg-current rounded-full"></span>
@@ -223,256 +228,345 @@
 </button>
 </div>
 <!-- Mobile Dropdown -->
-<div id="mobile-menu" class="md:hidden bg-surface border-b border-outline-variant">
-    <nav class="px-6 py-4 flex flex-col space-y-4 font-headline text-sm uppercase tracking-wider">
-        <a class="mobile-link text-primary font-bold" href="#">Home</a>
-        <a class="mobile-link text-secondary" href="#services">Services</a>
-        <a class="mobile-link text-secondary" href="#references">References</a>
-        <a class="mobile-link text-secondary" href="#contact">Contact</a>
-        <a class="mobile-link bg-primary-container text-on-primary px-6 py-3 rounded text-center font-bold" href="#contact">Request a Quote</a>
+<div id="mobile-menu" class="md:hidden bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+    <nav class="px-6 py-4 flex flex-col space-y-2 font-headline text-sm uppercase tracking-wider">
+        <a class="mobile-link text-primary font-bold px-3 py-2 rounded-md bg-surface-container-low" href="#">Home</a>
+        <a class="mobile-link text-secondary px-3 py-2 rounded-md hover:bg-surface-container-low transition-colors" href="#services">Services</a>
+        <a class="mobile-link text-secondary px-3 py-2 rounded-md hover:bg-surface-container-low transition-colors" href="#references">References</a>
+        <a class="mobile-link text-secondary px-3 py-2 rounded-md hover:bg-surface-container-low transition-colors" href="#contact">Contact</a>
+        <a class="mobile-link bg-primary-container text-on-primary px-6 py-3 rounded text-center font-bold mt-2" href="#contact">Request a Quote</a>
     </nav>
 </div>
 </header>
 <!-- Hero Section -->
 <section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 md:px-16 max-w-[1440px] mx-auto reveal overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Industrial Engineering" class="hidden md:block w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
-<div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50"></div>
+<img alt="Industrial Engineering" class="hidden md:block w-full h-full object-cover opacity-15" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-kO3ZK8EUbrLbm2alWzRecKOJMHC4IzKrXKAHh1HzPu6zXsMV8ONZyOwnsLpx3gDXqm09TMOgWR_HvYPhSO-LB3psbLQ92jaVArPHOHTb9QuR98Ml9iwxDBXomAh4G0kWNz003V44kiGEo2FX8aXqOwPpAv1r0ft0BGfA37cdueqMRdfc9kJq2rewK8pCJ9242pX4i4LgC4xcSaTJ5uT243edVmNhRciU1f_y8Kptqre4LX4Cb4iLiuf6TA6iU79m5pznulWYh8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60"></div>
 </div>
 <div class="relative z-10 max-w-3xl">
-<h1 class="font-display text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container/20 border border-primary-container/30 rounded-full mb-6">
+    <span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+    <span class="text-primary font-headline text-sm font-semibold uppercase tracking-wider">Cabinet de conseil en Tunisie</span>
+</div>
+<h1 class="font-display text-4xl md:text-6xl font-bold text-primary mb-6 leading-[1.1]">
                 Bureau d'études, de formation et de conseil spécialisé.
             </h1>
-<p class="text-lg md:text-xl text-on-surface-variant mb-10 max-w-2xl font-body">
+<p class="text-lg md:text-xl text-on-surface-variant mb-10 max-w-2xl font-body leading-relaxed">
                 Expertise en ingénierie, management industriel et systèmes d'information pour propulser votre performance opérationnelle.
             </p>
-<a class="inline-block bg-primary-container text-on-primary px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-primary transition-colors shadow-lg btn-pulse" href="#contact">
-                Demander un devis
-            </a>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-primary transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 btn-pulse" href="#contact">
+    <span>Demander un devis</span>
+    <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-surface-container-low text-primary border border-outline-variant px-8 py-4 rounded font-headline font-semibold text-lg hover:bg-surface-container-high hover:border-primary/30 transition-all" href="#services">
+    <span class="material-symbols-outlined text-xl" data-icon="play_circle">play_circle</span>
+    <span>Découvrir nos services</span>
+</a>
+</div>
+<div class="mt-12 flex items-center gap-6 text-sm text-on-surface-variant">
+    <div class="flex -space-x-2">
+        <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary text-xs font-bold border-2 border-background">+50</div>
+    </div>
+    <p>Plus de 50 entreprises accompagnées avec succès</p>
+</div>
 </div>
 </section>
 <!-- Pourquoi nous choisir Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal">
-<div class="mb-16 text-center">
-<h2 class="font-display text-3xl font-bold text-primary mb-4">Pourquoi nous choisir ?</h2>
+<section class="py-24 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<span class="text-primary-container font-headline text-sm font-bold uppercase tracking-wider">Nos atouts</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">Pourquoi nous choisir ?</h2>
 <div class="w-20 h-1 bg-primary mx-auto"></div>
+<p class="text-on-surface-variant mt-4">Un accompagnement stratégique et opérationnel pour transformer vos défis en leviers de performance.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="text-center p-6 reveal">
-<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group text-center p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/50 hover:border-primary-container/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+<div class="w-16 h-16 bg-gradient-to-br from-primary-container to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-on-primary shadow-lg group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-3xl" data-icon="diversity_3">diversity_3</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Expertise Multidisciplinaire</h3>
-<p class="text-on-surface-variant text-sm">Une équipe de consultants et d'ingénieurs couvrant tous les domaines de la performance.</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Une équipe de consultants et d'ingénieurs couvrant tous les domaines de la performance.</p>
 </div>
-<div class="text-center p-6 reveal">
-<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<div class="group text-center p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/50 hover:border-primary-container/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+<div class="w-16 h-16 bg-gradient-to-br from-primary-container to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-on-primary shadow-lg group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-3xl" data-icon="handshake">handshake</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Accompagnement Sur-Mesure</h3>
-<p class="text-on-surface-variant text-sm">Des solutions adaptées à la taille, au secteur et aux défis spécifiques de votre entreprise.</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Des solutions adaptées à la taille, au secteur et aux défis spécifiques de votre entreprise.</p>
 </div>
-<div class="text-center p-6 reveal">
-<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<div class="group text-center p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/50 hover:border-primary-container/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+<div class="w-16 h-16 bg-gradient-to-br from-primary-container to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-on-primary shadow-lg group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Engagement Qualité (ISO)</h3>
-<p class="text-on-surface-variant text-sm">Une démarche rigoureuse alignée sur les standards internationaux pour des résultats durables.</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Une démarche rigoureuse alignée sur les standards internationaux pour des résultats durables.</p>
 </div>
-<div class="text-center p-6 reveal">
-<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<div class="group text-center p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/50 hover:border-primary-container/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+<div class="w-16 h-16 bg-gradient-to-br from-primary-container to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-on-primary shadow-lg group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-3xl" data-icon="lightbulb">lightbulb</span>
 </div>
 <h3 class="font-headline text-lg font-bold text-primary mb-3">Innovation Technologique</h3>
-<p class="text-on-surface-variant text-sm">Intégration des dernières technologies et systèmes d'information dans vos processus.</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Intégration des dernières technologies et systèmes d'information dans vos processus.</p>
 </div>
 </div>
 </section>
 
 <!-- Stats Counter Section -->
-<section id="stats-section" class="py-16 bg-primary text-on-primary">
-    <div class="max-w-[1440px] mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-        <div class="reveal">
+<section id="stats-section" class="py-20 bg-primary text-on-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-fixed rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+    </div>
+    <div class="max-w-[1440px] mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10">
+        <div class="reveal p-6">
+            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                <span class="material-symbols-outlined text-3xl" data-icon="groups">groups</span>
+            </div>
             <div class="font-display text-5xl font-black mb-2" data-target="50">0</div>
             <div class="font-headline text-sm uppercase tracking-widest opacity-80">clients accompagnés</div>
         </div>
-        <div class="reveal">
+        <div class="reveal p-6 md:border-x border-white/20">
+            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                <span class="material-symbols-outlined text-3xl" data-icon="folder_check">folder_check</span>
+            </div>
             <div class="font-display text-5xl font-black mb-2" data-target="120">0</div>
             <div class="font-headline text-sm uppercase tracking-widest opacity-80">projets réalisés</div>
         </div>
-        <div class="reveal">
-            <div class="font-display text-5xl font-black mb-2" data-target="15">0</div>
+        <div class="reveal p-6">
+            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                <span class="material-symbols-outlined text-3xl" data-icon="workspace_premium">workspace_premium</span>
+            </div>
+            <div class="font-display text-5xl font-black mb-2" data-target="25">0</div>
             <div class="font-headline text-sm uppercase tracking-widest opacity-80">années d'expertise</div>
         </div>
     </div>
 </section>
 
 <!-- Expertise Approfondie Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface-container-low reveal">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div>
-<img alt="Consulting session" class="rounded-lg shadow-xl w-full object-cover h-[400px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmOB_JbXJuyKAmENUr6YVGJq2cm5VDVPD4Fpf5IglX74b1aJvfRk523GQCp27iZFqpW1B-r2vfA7Of52GxZtzSxSWU7Lfsh0t8OnjOBX0PAiGztXw05mCrivA_m5Km4kkc4n13mKEdSI_NKTvgi6vYPd8JS_-w2oLjLtr4cisOfKjdryyW6eQ_vZ-M7KD9Alh1mDbA4vvsbb3fhFDFwCqwHZJhY7N_PGu9M-R1jDUFNlszdK3pGF6V52RQQYODjC8R4OqqfGubvF8"/>
+<section class="py-24 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface-container-low reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary-container/20 rounded-3xl blur-2xl"></div>
+<img alt="Consulting session" class="relative rounded-2xl shadow-2xl w-full object-cover h-[450px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmOB_JbXJuyKAmENUr6YVGJq2cm5VDVPD4Fpf5IglX74b1aJvfRk523GQCp27iZFqpW1B-r2vfA7Of52GxZtzSxSWU7Lfsh0t8OnjOBX0PAiGztXw05mCrivA_m5Km4kkc4n13mKEdSI_NKTvgi6vYPd8JS_-w2oLjLtr4cisOfKjdryyW6eQ_vZ-M7KD9Alh1mDbA4vvsbb3fhFDFwCqwHZJhY7N_PGu9M-R1jDUFNlszdK3pGF6V52RQQYODjC8R4OqqfGubvF8"/>
 </div>
 <div>
-<h2 class="font-display text-3xl font-bold text-primary mb-6">Expertise Approfondie &amp; Coaching Stratégique</h2>
+<span class="text-primary-container font-headline text-sm font-bold uppercase tracking-wider">Notre approche</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-primary mt-3 mb-6">Expertise Approfondie &amp; Coaching Stratégique</h2>
 <div class="w-20 h-1 bg-primary mb-6"></div>
-<p class="text-on-surface-variant mb-6 text-lg">
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
                 Notre approche ne s'arrête pas à la recommandation. Nous croyons en la transformation par l'accompagnement humain et le transfert de compétences.
             </p>
-<ul class="space-y-4">
-<li class="flex items-start">
-<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
-<span class="text-on-surface-variant"><strong>Diagnostic Précis :</strong> Identification des goulots d'étranglement et des opportunités de croissance.</span>
+<ul class="space-y-5">
+<li class="flex items-start p-4 bg-surface rounded-xl border border-outline-variant/30 hover:border-primary-container/30 hover:shadow-md transition-all">
+<div class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center mr-4 shrink-0">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-1">Diagnostic Précis</h4>
+<p class="text-on-surface-variant text-sm">Identification des goulots d'étranglement et des opportunités de croissance.</p>
+</div>
 </li>
-<li class="flex items-start">
-<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
-<span class="text-on-surface-variant"><strong>Coaching Dirigeants :</strong> Accompagnement des comités de direction dans la conduite du changement.</span>
+<li class="flex items-start p-4 bg-surface rounded-xl border border-outline-variant/30 hover:border-primary-container/30 hover:shadow-md transition-all">
+<div class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center mr-4 shrink-0">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-1">Coaching Dirigeants</h4>
+<p class="text-on-surface-variant text-sm">Accompagnement des comités de direction dans la conduite du changement.</p>
+</div>
 </li>
-<li class="flex items-start">
-<span class="material-symbols-outlined text-primary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
-<span class="text-on-surface-variant"><strong>Formation Opérationnelle :</strong> Montée en compétences de vos équipes sur les nouveaux outils et méthodes.</span>
+<li class="flex items-start p-4 bg-surface rounded-xl border border-outline-variant/30 hover:border-primary-container/30 hover:shadow-md transition-all">
+<div class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center mr-4 shrink-0">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-1">Formation Opérationnelle</h4>
+<p class="text-on-surface-variant text-sm">Montée en compétences de vos équipes sur les nouveaux outils et méthodes.</p>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </section>
 <!-- Services Section -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal" id="services">
-<div class="mb-16 text-center reveal">
-<h2 class="font-display text-3xl font-bold text-primary mb-4">Nos Services d'Expertise</h2>
+<section class="py-24 px-4 md:px-16 max-w-[1440px] mx-auto bg-surface reveal" id="services">
+<div class="mb-16 text-center max-w-2xl mx-auto reveal">
+<span class="text-primary-container font-headline text-sm font-bold uppercase tracking-wider">Ce que nous proposons</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">Nos Services d'Expertise</h2>
 <div class="w-20 h-1 bg-primary mx-auto"></div>
+<p class="text-on-surface-variant mt-4">Des solutions complètes pour optimiser votre organisation et accélérer votre transformation.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="factory">factory</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="factory">factory</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management Industriel</h3>
-<p class="text-on-surface-variant font-body text-sm">Optimisation de l'organisation des entreprises industrielles, Lean Manufacturing, et Supply Chain Management (SCM).</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Optimisation de l'organisation des entreprises industrielles, Lean Manufacturing, et Supply Chain Management (SCM).</p>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="account_tree">account_tree</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="account_tree">account_tree</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Management de Projets</h3>
-<p class="text-on-surface-variant font-body text-sm">Pilotage et intégration via ERP, MS Project, et Primavera pour garantir le succès de vos déploiements.</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Pilotage et intégration via ERP, MS Project, et Primavera pour garantir le succès de vos déploiements.</p>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="verified">verified</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="verified">verified</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes de Management</h3>
-<p class="text-on-surface-variant font-body text-sm">Accompagnement aux certifications ISO 9001 (Qualité), 14001 (Environnement), 45001 (SST), 27001 (Sécurité IT).</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Accompagnement aux certifications ISO 9001 (Qualité), 14001 (Environnement), 45001 (SST), 27001 (Sécurité IT).</p>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="dns">dns</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="dns">dns</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Systèmes d’Information</h3>
-<p class="text-on-surface-variant font-body text-sm">Audit, conseil et intégration de solutions ERP, Business Intelligence (BI), GED, et Sécurité des SI.</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Audit, conseil et intégration de solutions ERP, Business Intelligence (BI), GED, et Sécurité des SI.</p>
 </div>
 <!-- Card 5 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="co_present">co_present</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="co_present">co_present</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Coaching &amp; Accompagnement</h3>
-<p class="text-on-surface-variant font-body text-sm">Formation sur-mesure et accompagnement stratégique des équipes dirigeantes et opérationnelles.</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Formation sur-mesure et accompagnement stratégique des équipes dirigeantes et opérationnelles.</p>
 </div>
 <!-- Card 6 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-lg hover:shadow-lg transition-shadow service-card reveal">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4 transition-transform" data-icon="architecture">architecture</span>
+<div class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-2xl hover:shadow-xl hover:-translate-y-1 hover:border-primary-container/40 transition-all duration-300 service-card reveal">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl transition-transform" data-icon="architecture">architecture</span>
+</div>
 <h3 class="font-headline text-xl font-semibold text-primary mb-3">Etudes Techniques</h3>
-<p class="text-on-surface-variant font-body text-sm">Réalisation d'études techniques et stratégiques approfondies pour valider la faisabilité de vos projets d'ingénierie.</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Réalisation d'études techniques et stratégiques approfondies pour valider la faisabilité de vos projets d'ingénierie.</p>
 </div>
 </div>
 </section>
 <!-- Notre Méthodologie Section -->
-<section id="methodology" class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto bg-primary-container text-on-primary rounded-xl my-12 reveal">
-<div class="mb-16 text-center reveal">
-<h2 class="font-display text-3xl font-bold mb-4">Notre Méthodologie</h2>
+<section id="methodology" class="py-24 px-4 md:px-16 max-w-[1440px] mx-auto bg-primary-container text-on-primary rounded-2xl my-16 reveal">
+<div class="mb-16 text-center max-w-2xl mx-auto reveal">
+<span class="text-primary-fixed-dim font-headline text-sm font-bold uppercase tracking-wider">Notre processus</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold mt-3 mb-4">Notre Méthodologie</h2>
 <div class="w-20 h-1 bg-primary-fixed-dim mx-auto"></div>
+<p class="text-primary-fixed-dim mt-4">Une approche structurée et éprouvée pour garantir la réussite de vos projets.</p>
 </div>
-<div class="flex flex-col md:flex-row justify-between items-center relative">
-<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -z-0">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center relative">
+<div class="hidden md:block absolute top-1/2 left-[12%] right-[12%] h-0.5 bg-primary-fixed/20 -translate-y-1/2">
     <div id="timeline-line" class="h-full bg-primary-fixed timeline-line"></div>
 </div>
 <!-- Step 1 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">1</div>
+<div class="relative z-10 flex md:flex-col items-center md:text-center mb-8 md:mb-0 bg-primary-container p-4 w-full md:w-auto reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-0 md:mb-4 mr-4 md:mr-0 shadow-lg methodology-step shrink-0">1</div>
+<div>
 <h4 class="font-headline font-bold mb-2">Audit &amp; Diagnostic</h4>
-<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">État des lieux et identification des besoins</p>
+<p class="text-sm max-w-[200px] text-primary-fixed-dim">État des lieux et identification des besoins</p>
+</div>
 </div>
 <!-- Step 2 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">2</div>
+<div class="relative z-10 flex md:flex-col items-center md:text-center mb-8 md:mb-0 bg-primary-container p-4 w-full md:w-auto reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-0 md:mb-4 mr-4 md:mr-0 shadow-lg methodology-step shrink-0">2</div>
+<div>
 <h4 class="font-headline font-bold mb-2">Plan d'Action</h4>
-<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Définition de la stratégie et des ressources</p>
+<p class="text-sm max-w-[200px] text-primary-fixed-dim">Définition de la stratégie et des ressources</p>
+</div>
 </div>
 <!-- Step 3 -->
-<div class="relative z-10 flex flex-col items-center mb-8 md:mb-0 bg-primary-container p-4 reveal">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">3</div>
+<div class="relative z-10 flex md:flex-col items-center md:text-center mb-8 md:mb-0 bg-primary-container p-4 w-full md:w-auto reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-0 md:mb-4 mr-4 md:mr-0 shadow-lg methodology-step shrink-0">3</div>
+<div>
 <h4 class="font-headline font-bold mb-2">Mise en œuvre</h4>
-<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Déploiement des solutions et accompagnement</p>
+<p class="text-sm max-w-[200px] text-primary-fixed-dim">Déploiement des solutions et accompagnement</p>
+</div>
 </div>
 <!-- Step 4 -->
-<div class="relative z-10 flex flex-col items-center bg-primary-container p-4 reveal">
-<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-4 shadow-lg methodology-step">4</div>
+<div class="relative z-10 flex md:flex-col items-center md:text-center bg-primary-container p-4 w-full md:w-auto reveal">
+<div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xl border-4 border-primary-container mb-0 md:mb-4 mr-4 md:mr-0 shadow-lg methodology-step shrink-0">4</div>
+<div>
 <h4 class="font-headline font-bold mb-2">Suivi &amp; Amélioration</h4>
-<p class="text-sm text-center max-w-[200px] text-primary-fixed-dim">Mesure des performances et ajustement continu</p>
+<p class="text-sm max-w-[200px] text-primary-fixed-dim">Mesure des performances et ajustement continu</p>
+</div>
 </div>
 </div>
 </section>
 <!-- Contact & Footer Section combined for layout cohesion -->
-<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto" id="contact">
+<section class="py-24 px-4 md:px-16 max-w-[1440px] mx-auto" id="contact">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<span class="text-primary-container font-headline text-sm font-bold uppercase tracking-wider">Contactez-nous</span>
+<h2 class="font-display text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">Discutons de votre projet</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+<p class="text-on-surface-variant mt-4">Prêt à transformer votre entreprise ? Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
+</div>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 <!-- Contact Form -->
-<div>
-<h2 class="font-display text-3xl font-bold text-primary mb-8">Envoyez-nous un message</h2>
-<form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-outline-variant/50 shadow-sm">
+<h3 class="font-display text-2xl font-bold text-primary mb-6">Envoyez-nous un message</h3>
+<form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-5">
 <input type="hidden" name="form-name" value="contact" />
 <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
 <div class="relative">
-<label class="block font-label text-sm font-medium text-on-surface mb-1" for="name">Nom complet</label>
-<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="name" name="name" placeholder="Votre nom" type="text" autocomplete="name" required/>
+<label class="block font-label text-sm font-medium text-on-surface mb-1.5" for="name">Nom complet</label>
+<input class="w-full border-outline-variant/60 rounded-lg p-3.5 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="name" name="name" placeholder="Votre nom" type="text" autocomplete="name" required/>
 <p id="nameError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
 </div>
 <div class="relative">
-<label class="block font-label text-sm font-medium text-on-surface mb-1" for="email">Email professionnel</label>
-<input class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" name="email" placeholder="email@entreprise.com" type="email" autocomplete="email" required/>
+<label class="block font-label text-sm font-medium text-on-surface mb-1.5" for="email">Email professionnel</label>
+<input class="w-full border-outline-variant/60 rounded-lg p-3.5 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" name="email" placeholder="email@entreprise.com" type="email" autocomplete="email" required/>
 <p id="emailError" class="text-error text-xs mt-1 hidden">Veuillez entrer une adresse e-mail correcte.</p>
 </div>
 <div class="relative">
-<label class="block font-label text-sm font-medium text-on-surface mb-1" for="message">Message</label>
-<textarea class="w-full border-outline-variant rounded p-3 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="message" name="message" placeholder="Décrivez votre besoin..." rows="4" autocomplete="off" required></textarea>
+<label class="block font-label text-sm font-medium text-on-surface mb-1.5" for="message">Message</label>
+<textarea class="w-full border-outline-variant/60 rounded-lg p-3.5 bg-surface focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="message" name="message" placeholder="Décrivez votre besoin..." rows="5" autocomplete="off" required></textarea>
 <p id="messageError" class="text-error text-xs mt-1 hidden">Veuillez remplir tous les champs.</p>
 </div>
-<button id="submitBtn" class="bg-primary text-on-primary px-8 py-3 rounded font-headline font-semibold hover:bg-primary-container transition-colors w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed" type="submit">
-                        Envoyer
+<button id="submitBtn" class="w-full bg-primary text-on-primary px-8 py-4 rounded-lg font-headline font-semibold hover:bg-primary-container transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0" type="submit">
+                        Envoyer le message
                     </button>
 </form>
 </div>
 <!-- Direct Contact & Clients -->
-<div class="space-y-12" id="references">
-<div>
+<div class="space-y-10" id="references">
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/50">
 <h3 class="font-headline text-xl font-bold text-primary mb-6">Contact Direct</h3>
 <div class="space-y-4">
-<div class="flex items-center space-x-3 text-on-surface-variant">
+<div class="flex items-center space-x-4 p-4 bg-surface rounded-xl border border-outline-variant/30">
+<div class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined text-primary" data-icon="person">person</span>
-<span class="font-medium">M. Abdelaziz KHARRAT</span>
 </div>
-<div class="flex items-center space-x-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary" data-icon="phone">phone</span>
-<span class="font-medium">+216 23 438 810</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Consultant</p>
+<p class="font-medium text-primary">M. Abdelaziz KHARRAT</p>
 </div>
+</div>
+<a href="tel:+21623438810" class="flex items-center space-x-4 p-4 bg-surface rounded-xl border border-outline-variant/30 hover:border-primary-container/40 hover:shadow-md transition-all group">
+<div class="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors" data-icon="phone">phone</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Téléphone</p>
+<p class="font-medium text-primary">+216 23 438 810</p>
+</div>
+</a>
 </div>
 </div>
 <div>
 <h3 class="font-headline text-xl font-bold text-primary mb-6">Ils nous font confiance</h3>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">EPPM</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">ECOCERAT</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">TC MARINES</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">UPC</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">MDS</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">Ariston Thermo</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">SOPROTIC</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">TUNIFOOD</div>
-<div class="flex items-center justify-center p-4 bg-surface-container-low border border-outline-variant rounded shadow-sm text-center font-bold text-primary-container client-item reveal">UGI</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">EPPM</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">ECOCERAT</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">TC MARINES</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">UPC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">MDS</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">Ariston Thermo</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">SOPROTIC</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">TUNIFOOD</div>
+<div class="flex items-center justify-center p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm text-center font-bold text-primary-container client-item reveal hover:-translate-y-0.5 transition-transform">UGI</div>
 </div>
 </div>
 </div>
@@ -480,17 +574,33 @@
 </section>
 <!-- Footer Component execution -->
 <footer class="bg-primary dark:bg-tertiary-container w-full">
-<div class="w-full py-12 px-16 flex flex-col md:flex-row justify-between items-center max-w-[1440px] mx-auto text-on-primary dark:text-on-tertiary-container font-body text-label-sm">
-<div class="mb-6 md:mb-0 text-center md:text-left">
-<div class="font-headline text-lg font-bold text-on-primary dark:text-on-tertiary-container mb-2">STRATEGIA</div>
-<div class="opacity-80">© 2026 STRATEGIA Consultancy &amp; Engineering. MF : 1527647/S/A/M/000 - RC : B01167162017 All rights reserved.</div>
+<div class="max-w-[1440px] mx-auto px-4 md:px-16 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-white/10">
+<div class="text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-2 mb-3">
+<div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-base" data-icon="analytics">analytics</span>
 </div>
+<div class="font-headline text-xl font-bold text-on-primary dark:text-on-tertiary-container">STRATEGIA</div>
+</div>
+<p class="text-on-primary-container/80 text-sm max-w-sm">Bureau d'études, de formation et de conseil spécialisé en ingénierie et management industriel.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-on-primary hover:bg-white/20 transition-colors" href="https://www.linkedin.com/in/abdelaziz-kharrat-7a2a6725/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+</a>
+<a class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-on-primary hover:bg-white/20 transition-colors" href="https://wa.me/21623438810" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</div>
+</div>
+<div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-on-primary-container/80">
+<div class="text-center md:text-left">© 2026 STRATEGIA Consultancy &amp; Engineering. MF : 1527647/S/A/M/000 - RC : B01167162017 All rights reserved.</div>
 <ul class="flex flex-wrap justify-center gap-6">
-<li><a class="text-on-primary-container opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary-container opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary-container font-bold hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none flex items-center gap-1" href="https://www.linkedin.com/in/abdelaziz-kharrat-7a2a6725/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm" data-icon="share">share</span> LinkedIn</a></li>
-<li><a class="text-on-primary-container font-bold hover:opacity-100 transition-opacity hover:text-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed rounded outline-none flex items-center gap-1" href="https://wa.me/21623438810" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm" data-icon="chat">chat</span> WhatsApp</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
 </ul>
+</div>
 </div>
 </footer>
 
